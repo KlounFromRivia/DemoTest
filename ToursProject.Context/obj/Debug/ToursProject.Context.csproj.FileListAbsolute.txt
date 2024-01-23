@@ -1,0 +1,14 @@
+C:\Users\koche\Desktop\DemoTest\ToursProject.Context\bin\Debug\ToursProject.Context.dll.config
+C:\Users\koche\Desktop\DemoTest\ToursProject.Context\bin\Debug\ToursProject.Context.dll
+C:\Users\koche\Desktop\DemoTest\ToursProject.Context\bin\Debug\ToursProject.Context.pdb
+C:\Users\koche\Desktop\DemoTest\ToursProject.Context\bin\Debug\EntityFramework.dll
+C:\Users\koche\Desktop\DemoTest\ToursProject.Context\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\koche\Desktop\DemoTest\ToursProject.Context\bin\Debug\EntityFramework.xml
+C:\Users\koche\Desktop\DemoTest\ToursProject.Context\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\koche\Desktop\DemoTest\ToursProject.Context\obj\Debug\ToursProject.Context.csproj.AssemblyReference.cache
+C:\Users\koche\Desktop\DemoTest\ToursProject.Context\obj\Debug\ToursProject.Context.csproj.CoreCompileInputs.cache
+C:\Users\koche\Desktop\DemoTest\ToursProject.Context\obj\Debug\ToursProject.Context.csproj.CopyComplete
+C:\Users\koche\Desktop\DemoTest\ToursProject.Context\obj\Debug\ToursProject.Context.dll
+C:\Users\koche\Desktop\DemoTest\ToursProject.Context\obj\Debug\ToursProject.Context.pdb
+C:\Users\koche\Desktop\DemoTest\ToursProject.Context\obj\Debug\ToursProject.Context.Migrations.Instal.resources
+C:\Users\koche\Desktop\DemoTest\ToursProject.Context\obj\Debug\ToursProject.Context.csproj.GenerateResource.cache
