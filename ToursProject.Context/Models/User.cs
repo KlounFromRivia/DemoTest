@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using ToursProject.Context.Enum;
 
 namespace ToursProject.Context.Models
 {
@@ -22,7 +23,15 @@ namespace ToursProject.Context.Models
         [Required]
         public string Password { get; set; }
 
-        public ICollection<HotelComment> HotelComments { get; set; }
-        public ICollection<Order> Orders { get; set; }
+        [Required]
+        public Role Role { get; set; }
+
+        public virtual ICollection<HotelComment> HotelComments { get; set; }
+        public virtual ICollection<Order> Orders { get; set; }
+
+        public override string ToString()
+        {
+            return $"{LastName} {FirstName} {Patronymic}";
+        }
     }
 }

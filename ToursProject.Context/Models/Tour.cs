@@ -10,6 +10,9 @@ namespace ToursProject.Context.Models
         [Required]
         public int TicketCount { get; set; }
 
+        public string CountryCode { get; set; }
+        public virtual Country Country { get; set; }
+
         [Required]
         public string Title { get; set; }
         public string Description { get; set; }
@@ -21,15 +24,33 @@ namespace ToursProject.Context.Models
         [Required]
         public bool IsActual { get; set; }
 
-        public ICollection<Hotel> Hotels { get; set; }
-        public ICollection<TypeTour> Types { get; set; }
-        public ICollection<Order> Orders { get; set; }
+        public virtual ICollection<Hotel> Hotels { get; set; }
+        public virtual ICollection<TypeTour> Types { get; set; }
+        public virtual ICollection<Order> Orders { get; set; }
 
         public Tour()
         {
             Hotels = new List<Hotel>();
             Orders = new List<Order>();
             Types = new List<TypeTour>();
+        }
+
+        public override int GetHashCode()
+         => Id.GetHashCode();
+
+        public override bool Equals(object obj)
+        {
+            if(obj == null)
+            {
+                return false; 
+            }
+            
+            if(obj is Tour tour) 
+            { 
+                return tour.Id.Equals(Id);
+            }
+
+            return false;
         }
 
     }

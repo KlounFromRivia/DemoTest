@@ -9,12 +9,12 @@ namespace ToursProject.Context.Models
 
         [Required]
         public int HotelId { get; set; }
-        public Hotel Hotel { get; set; }
+        public virtual Hotel Hotel { get; set; }
 
         [Required]
         public string Text { get; set; }
         public int UserId { get; set; }
-        public User User { get; set; }
+        public virtual User User { get; set; }
 
         [Required]
         public DateTimeOffset CreationDate { get; set; }

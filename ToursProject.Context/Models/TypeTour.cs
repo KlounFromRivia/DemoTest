@@ -11,11 +11,16 @@ namespace ToursProject.Context.Models
         public string Name { get; set; }
         public string Description { get; set; }
 
-        public ICollection<Tour> Tours { get; set; }
+        public virtual ICollection<Tour> Tours { get; set; }
 
         public TypeTour()
         {
             Tours = new List<Tour>();
+        }
+
+        public override string ToString()
+        {
+            return Name;
         }
     }
 }

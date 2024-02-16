@@ -9,12 +9,13 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>ToursProject</RootNamespace>
     <AssemblyName>ToursProject</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -42,6 +43,7 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -56,14 +58,96 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="AddForm\EditHotel.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
+    <Compile Include="AddForm\EditHotel.Designer.cs">
+      <DependentUpon>EditHotel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddForm\EditTour.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddForm\EditTour.Designer.cs">
+      <DependentUpon>EditTour.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AutorizationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AutorizationForm.Designer.cs">
+      <DependentUpon>AutorizationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GridForm\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GridForm\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GridForm\HotelForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GridForm\HotelForm.Designer.cs">
+      <DependentUpon>HotelForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GridForm\OrderGrid.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GridForm\OrderGrid.Designer.cs">
+      <DependentUpon>OrderGrid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyControl\OrderView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyControl\OrderView.Designer.cs">
+      <DependentUpon>OrderView.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="OrderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrderForm.Designer.cs">
+      <DependentUpon>OrderForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyControl\TourView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyControl\TourView.Designer.cs">
+      <DependentUpon>TourView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WorkToUser.cs" />
+    <EmbeddedResource Include="AddForm\EditHotel.resx">
+      <DependentUpon>EditHotel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddForm\EditTour.resx">
+      <DependentUpon>EditTour.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AutorizationForm.resx">
+      <DependentUpon>AutorizationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GridForm\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GridForm\HotelForm.resx">
+      <DependentUpon>HotelForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrderForm.resx">
+      <DependentUpon>OrderForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GridForm\OrderGrid.resx">
+      <DependentUpon>OrderGrid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyControl\OrderView.resx">
+      <DependentUpon>OrderView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -72,7 +156,11 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="MyControl\TourView.resx">
+      <DependentUpon>TourView.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -92,6 +180,9 @@
       <Project>{014777de-99c1-4696-888f-77160774fee1}</Project>
       <Name>ToursProject.Context</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\picture.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -56,6 +56,7 @@
                         Patronymic = c.String(nullable: false),
                         Login = c.String(nullable: false),
                         Password = c.String(nullable: false),
+                        Role = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id);
             
@@ -94,13 +95,16 @@
                     {
                         Id = c.Int(nullable: false, identity: true),
                         TicketCount = c.Int(nullable: false),
+                        CountryCode = c.String(maxLength: 128),
                         Title = c.String(nullable: false),
                         Description = c.String(),
                         ImagePreview = c.Binary(),
                         Price = c.Decimal(nullable: false, precision: 18, scale: 2),
                         IsActual = c.Boolean(nullable: false),
                     })
-                .PrimaryKey(t => t.Id);
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.Countries", t => t.CountryCode)
+                .Index(t => t.CountryCode);
             
             CreateTable(
                 "dbo.TypeTours",
@@ -162,6 +166,7 @@
             DropForeignKey("dbo.TourOrders", "Tour_Id", "dbo.Tours");
             DropForeignKey("dbo.TourHotels", "Hotel_Id", "dbo.Hotels");
             DropForeignKey("dbo.TourHotels", "Tour_Id", "dbo.Tours");
+            DropForeignKey("dbo.Tours", "CountryCode", "dbo.Countries");
             DropForeignKey("dbo.Orders", "ReceivingPointId", "dbo.ReceivingPoints");
             DropForeignKey("dbo.HotelComments", "UserId", "dbo.Users");
             DropForeignKey("dbo.HotelComments", "HotelId", "dbo.Hotels");
@@ -172,6 +177,7 @@
             DropIndex("dbo.TourOrders", new[] { "Tour_Id" });
             DropIndex("dbo.TourHotels", new[] { "Hotel_Id" });
             DropIndex("dbo.TourHotels", new[] { "Tour_Id" });
+            DropIndex("dbo.Tours", new[] { "CountryCode" });
             DropIndex("dbo.Orders", new[] { "ReceivingPointId" });
             DropIndex("dbo.Orders", new[] { "UserId" });
             DropIndex("dbo.HotelComments", new[] { "UserId" });

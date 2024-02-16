@@ -10,6 +10,12 @@ namespace ToursProject.Context.Models
 
         [Required]
         public string Name { get; set; }
-        public ICollection<Hotel> Hotels { get; set; }
+        public virtual ICollection<Hotel> Hotels { get; set; }
+        public virtual ICollection<Tour> Tours { get; set; }
+
+        public override string ToString()
+        {
+            return Name;
+        }
     }
 }

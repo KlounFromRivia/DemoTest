@@ -7,8 +7,9 @@ namespace ToursProject.Context.Models
     public class Order
     {
         public int Id { get; set; }
-        public int UserId { get; set; }
-        public User User { get; set; }
+
+        public int? UserId { get; set; }
+        public virtual User User { get; set; }
 
         [Required]
         public decimal Price { get; set; }
@@ -24,11 +25,11 @@ namespace ToursProject.Context.Models
 
         [Required]
         public int ReceivingPointId { get; set; }
-        public ReceivingPoint ReceivingPoint { get; set; }
+        public virtual ReceivingPoint ReceivingPoint { get; set; }
 
         [Required]
         public int Code { get; set; }
-        public ICollection<Tour> Tours { get; set; }
+        public virtual ICollection<Tour> Tours { get; set; }
 
         public Order()
         {

@@ -15,11 +15,11 @@ namespace ToursProject.Context.Models
 
         [Required]
         public string CountryCode { get; set; }
-        public Country Country { get; set; }
+        public virtual Country Country { get; set; }
         public string Description { get; set; }
 
-        public ICollection<HotelComment> HotelComments { get; set; }
-        public ICollection<Tour> Tours { get; set;}    
+        public virtual ICollection<HotelComment> HotelComments { get; set; }
+        public virtual ICollection<Tour> Tours { get; set;}    
 
         public Hotel()
         {
