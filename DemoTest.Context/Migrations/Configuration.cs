@@ -1,18 +1,18 @@
-﻿namespace ToursProject.Context.Migrations
+﻿namespace DemoTest.Context.Migrations
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<ToursProject.Context.ToursContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<DemoTest.Context.DemoTestDBContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(ToursProject.Context.ToursContext context)
+        protected override void Seed(DemoTest.Context.DemoTestDBContext context)
         {
             //  This method will be called after migrating to the latest version.
 
